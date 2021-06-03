@@ -13,7 +13,7 @@ const timeout = function (s) {
 };
 
 // Forkify API: https://forkify-api.herokuapp.com/v2
-console.log('hi');
+
 ///////////////////////////////////////
 const renderSpinner = function (parentEl) {
   const markup = `
