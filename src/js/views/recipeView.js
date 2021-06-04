@@ -8,7 +8,7 @@ class RecipeView {
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
-        this.#clear;
+        this.#clear();
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
 
@@ -24,7 +24,7 @@ class RecipeView {
             </svg>
           </div>
         `;
-        this.#parentElement.innerHTML = '';
+        this.#clear();
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
     }
 
