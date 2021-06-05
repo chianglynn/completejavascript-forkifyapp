@@ -1,0 +1,23 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getJSON = void 0;
+
+const timeout = function (ms) {
+  c;
+};
+
+const getJSON = async function (url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (!response.ok) throw new Error(`${data.message} (${response.status})`);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.getJSON = getJSON;

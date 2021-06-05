@@ -1,0 +1,25 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getJSON = void 0;
+
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(() => reject(`Request took too long! Timeout after ${s} seconds.`), s * 1000);
+  });
+};
+
+const getJSON = async function (url) {
+  try {
+    const response = await Promise.race[(fetch(url), timeout(10))];
+    const data = await response.json();
+    if (!response.ok) throw new Error(`${data.message} (${response.status})`);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.getJSON = getJSON;
