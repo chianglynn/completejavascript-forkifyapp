@@ -120,6 +120,12 @@ class RecipeView {
             </li>
         `;
     }
+
+    addHandlerRender(handler) {
+        ['load', 'hashchange'].forEach((e) => window.addEventListener(e, handler));
+        // window.addEventListener('load', controllRecipes);
+        // window.addEventListener('hashchange', controllRecipes);
+    }
 }
 
 export default new RecipeView();
