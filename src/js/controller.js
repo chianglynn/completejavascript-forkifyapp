@@ -5,7 +5,7 @@ import resultsView from './views/resultsView.js';
 import 'core-js/stable'; // polyfill everything else
 import 'regenerator-runtime/runtime'; // polyfill async/await
 
-if (module.hot) module.hot.accept();
+if (module.hot) module.hot.accept(); // only use in parcel
 
 const controllRecipes = async function () {
   try {
@@ -35,7 +35,6 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
     resultsView.render(model.state.search.results);
   } catch (err) {
-    // resultsView.renderError();
     console.error(err);
   }
 };
